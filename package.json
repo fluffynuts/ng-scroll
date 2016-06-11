@@ -1,0 +1,39 @@
+{
+  "name": "ng-scroll",
+  "version": "1.0.0",
+  "description": "Angular directive to bind functions on your directive or scope to mouse scroll events",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r test/bootstrap.js test/**/*.spec.js",
+    "autotest": "mocha -R mocha-yar -r test/bootstrap.js test/**/*.spec.js --watch",
+    "prebuild": "run-s test",
+    "build": "browserify src/register.js -o index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluffynuts/ng-scroll.git"
+  },
+  "keywords": [
+    "angular",
+    "mouse",
+    "scroll",
+    "directive",
+    "event"
+  ],
+  "author": "Davyd McColl",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/fluffynuts/ng-scroll/issues"
+  },
+  "homepage": "https://github.com/fluffynuts/ng-scroll#readme",
+  "devDependencies": {
+    "angular": "^1.5.6",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "mocha-yar": "^1.0.4",
+    "npm-run-all": "^2.1.1",
+    "proxyquire": "^1.7.9",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0"
+  }
+}

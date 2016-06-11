@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../index.js"></script>
+  </head>
+  <body ng-app="app">
+    This demo contains a spinner directive: it holds an integer value
+    which will increase when you scroll up and decrease when you scroll down
+    <spinner></spinner>
+    <script tyoe="text/javascript">
+      angular.module('app', ['ng-scroll'])
+        .directive('spinner', function() {
+          return {
+            restrict: 'E',
+            template: '<input type="text" data-ng-model="value" data-ng-scroll-up="up()" data-ng-scroll-down="down()" />',
+            link: function ($scope, $element, $attr) {
+              function tryDo(func) {
+                try {
+                  func();
+                } catch (e) {
+                  $scope.value = 0;
+                }
+              }
+              $scope.value = 0;
+              $scope.up = function() {
+                tryDo(function() {
+                  $scope.value++;
+                });
+              };
+              $scope.down = function() {
+                tryDo(function() {
+                  $scope.value--;
+                })
+              };
+            }
+          }
+        }).run(function() {
+          console.log('app started');
+        });
+    </script>
+  </body>
+</html>
