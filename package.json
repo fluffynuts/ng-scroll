@@ -1,13 +1,14 @@
 {
   "name": "ng-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular directive to bind functions on your directive or scope to mouse scroll events",
   "main": "index.js",
   "scripts": {
     "test": "mocha -r test/bootstrap.js test/**/*.spec.js",
     "autotest": "mocha -R mocha-yar -r test/bootstrap.js test/**/*.spec.js --watch",
     "prebuild": "run-s test",
-    "build": "browserify src/register.js -o index.js"
+    "build": "browserify src/register.js -o index.js",
+    "quickbuild": "browserify src/register.js -o index.js"
   },
   "repository": {
     "type": "git",

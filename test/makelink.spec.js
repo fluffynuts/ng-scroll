@@ -59,7 +59,7 @@ describe('makeLink', () => {
         // Assert
         expect(el.bind).to.have.been.calledOnce;
         const args = el.bind.firstCall.args;
-        expect(args[0]).to.equal('DOMMouseScroll mousewheel');
+        expect(args[0]).to.equal('DOMMouseScroll mousewheel wheel');
         expect(args[1]).to.be.a('function');
       });
       it('should apply if the applyIf function returns true', () => {

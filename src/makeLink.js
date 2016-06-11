@@ -1,5 +1,5 @@
 function getScrollDelta(ev) {
-  return Math.max(-1, Math.min(1, ev.wheelDelta))
+  return ev.wheelDelta || (-1 * ev.deltaY) || 0;
 }
 
 function apply($scope, handler, ev) {
@@ -11,7 +11,7 @@ function apply($scope, handler, ev) {
 
 module.exports = function(directiveAttribute, applyIf) {
   return function($scope, $element, $attrs) {
-    $element.bind('DOMMouseScroll mousewheel', function(ev) {
+    $element.bind('DOMMouseScroll mousewheel wheel', function(ev) {
       const delta = getScrollDelta(ev)
       if (applyIf(delta)) {
         apply($scope, $attrs[directiveAttribute], ev)

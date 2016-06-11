@@ -1,6 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 function getScrollDelta(ev) {
-  return Math.max(-1, Math.min(1, ev.wheelDelta))
+  return ev.wheelDelta || (-1 * ev.deltaY) || 0;
+  //return Math.max(-1, Math.min(1, ev.wheelDelta))
 }
 
 function apply($scope, handler, ev) {
@@ -12,7 +13,7 @@ function apply($scope, handler, ev) {
 
 module.exports = function(directiveAttribute, applyIf) {
   return function($scope, $element, $attrs) {
-    $element.bind('DOMMouseScroll mousewheel', function(ev) {
+    $element.bind('DOMMouseScroll mousewheel wheel', function(ev) {
       const delta = getScrollDelta(ev)
       if (applyIf(delta)) {
         apply($scope, $attrs[directiveAttribute], ev)

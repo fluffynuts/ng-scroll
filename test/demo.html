@@ -4,8 +4,10 @@
     <script src="../index.js"></script>
   </head>
   <body ng-app="app">
-    This demo contains a spinner directive: it holds an integer value
-    which will increase when you scroll up and decrease when you scroll down
+    <div>
+      This demo contains a spinner directive: it holds an integer value
+      which will increase when you scroll up and decrease when you scroll down
+    </div>
     <spinner></spinner>
     <script tyoe="text/javascript">
       angular.module('app', ['ng-scroll'])
@@ -34,8 +36,6 @@
               };
             }
           }
-        }).run(function() {
-          console.log('app started');
         });
     </script>
   </body>
