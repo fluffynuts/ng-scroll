@@ -1,6 +1,6 @@
 {
   "name": "ng-scroll",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Angular directive to bind functions on your directive or scope to mouse scroll events",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/fluffynuts/ng-scroll#readme",
   "devDependencies": {
     "angular": "^1.5.6",
+    "browserify": "^13.0.1",
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
     "mocha-yar": "^1.0.4",
